@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
-  const phone = "201234567890";
+  const phone = "201552243265";
   const message = "مرحبًا، أريد طلب ممرض منزلي.\nالاسم:\nالمنطقة:\nنوع الحالة:";
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(
     message,

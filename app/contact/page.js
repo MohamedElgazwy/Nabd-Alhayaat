@@ -5,7 +5,7 @@ export const metadata = {
 };
 
 export default function Contact() {
-  const phone = "201234567890";
+  const phone = "201552243265";
   const message =
     "مرحبًا، أريد الاستفسار عن خدمات التمريض.";
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(
@@ -33,7 +33,7 @@ export default function Contact() {
 
 
         <div className="mt-10 text-gray-600">
-          <p>رقم الهاتف: 201234567890</p>
+          <p>رقم الهاتف: 201552243265</p>
           <p>متاحون 24/7</p>
         </div>
 
