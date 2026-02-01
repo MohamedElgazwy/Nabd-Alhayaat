@@ -3,6 +3,9 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -10,7 +13,7 @@ const cairo = Cairo({
 });
 
 export const metadata = {
-  title: "Medical Care",
+  title: "Nabd Alhayat",
   description: "Home Medical Services",
 };
 
