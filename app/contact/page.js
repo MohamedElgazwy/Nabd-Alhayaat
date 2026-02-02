@@ -1,43 +1,51 @@
-import { Button } from "@/components/ui/button";
+import CallButtons from "@/app/components/CallButtons";
 
 export const metadata = {
-  title: "تواصل معنا",
+  title: "تواصل معنا | Nabd Alhayaat",
+  description: "تواصل مع نبض الحياة للرعاية الصحية المنزلية",
 };
 
-export default function Contact() {
+export default function ContactPage() {
   const phone = "201024193594";
-  const message =
-    "مرحبًا، أريد الاستفسار عن خدمات التمريض.";
-  const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(
-    message
-  )}`;
 
   return (
-    <main className="min-h-screen py-20 px-6 bg-slate-50
-">
-      <div className="max-w-3xl mx-auto text-center">
-
-        <h1 className="text-4xl font-bold mb-10 text-blue-700">
+    <main className="min-h-screen">
+      {/* HERO */}
+      <section className="bg-blue-50 py-20 text-center">
+        <h1 className="text-4xl font-bold text-blue-700 mb-6">
           تواصل معنا
         </h1>
 
-        <p className="text-gray-700 text-lg mb-8">
-          يمكنك التواصل معنا مباشرة عبر واتساب للحصول على خدمة سريعة.
+        <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+          فريق Nabd Alhayaat جاهز للرد على جميع استفساراتك
+          ومساعدتك في اختيار الخدمة المناسبة لحالتك.
         </p>
+      </section>
 
-        <Button asChild className="bg-green-600 hover:bg-green-700 text-white">
-  <a href={whatsappLink} target="_blank">
-    اطلب ممرض الآن
-  </a>
-</Button>
+      {/* CONTACT INFO */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
+          
+          <div className="text-gray-700 text-lg">
+            📞 رقم الهاتف:
+            <span className="font-semibold mx-2">
+              {phone}
+            </span>
+          </div>
 
+          <div className="text-gray-700 text-lg">
+            📧 البريد الإلكتروني:
+            <span className="font-semibold mx-2">
+              nabdalhayaat123@gmail.com
+            </span>
+          </div>
 
-        <div className="mt-10 text-gray-600">
-          <p>رقم الهاتف: 201024193594</p>
-          <p>متاحون 24/7</p>
+          {/* CTA BUTTONS */}
+          <div className="pt-10 flex justify-center">
+            <CallButtons serviceName="الاستفسار عن خدمات Nabd Alhayaat" />
+          </div>
         </div>
-
-      </div>
+      </section>
     </main>
   );
 }

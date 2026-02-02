@@ -1,35 +1,78 @@
-
-
 export const metadata = {
-  title: "من نحن",
+  title: "من نحن | Nabd Alhayaat",
+  description: "تعرف على نبض الحياة للرعاية الصحية المنزلية",
 };
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <main className="min-h-screen py-20 px-6 bg-gray-50">
-      <div className="max-w-4xl mx-auto text-center">
-
-        <h1 className="text-4xl font-bold mb-8 text-blue-700">
+    <main className="min-h-screen">
+      {/* HERO */}
+      <section className="bg-blue-50 py-20 text-center">
+        <h1 className="text-4xl font-bold text-blue-700 mb-6">
           من نحن
         </h1>
 
-        <p className="text-gray-700 text-lg leading-8 mb-6">
-          نحن شركة متخصصة في تقديم خدمات التمريض المنزلي باحترافية عالية،
-          نهدف إلى توفير رعاية صحية آمنة ومريحة للمرضى داخل منازلهم
-          بواسطة فريق تمريض مؤهل ومدرب.
+        <p className="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
+          Nabd Alhayaat هي مؤسسة متخصصة في تقديم خدمات الرعاية الصحية
+          والتمريض المنزلي باحترافية عالية، مع التركيز على راحة المريض
+          وجودة الخدمة داخل منزله.
         </p>
+      </section>
 
-        <p className="text-gray-700 text-lg leading-8 mb-6">
-          نسعى دائمًا لتقديم أفضل مستوى من الخدمة من خلال السرعة في
-          الاستجابة والمتابعة المستمرة ورضا العملاء.
-        </p>
+      {/* CONTENT */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+          
+          {/* Vision */}
+          <div>
+            <h2 className="text-2xl font-bold text-blue-700 mb-4">
+              رؤيتنا
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              أن نكون الخيار الأول للرعاية الصحية المنزلية في مصر،
+              من خلال تقديم خدمات آمنة، متكاملة، وسريعة الوصول،
+              مع الالتزام الكامل بمعايير الجودة وسلامة المرضى.
+            </p>
+          </div>
 
-        <p className="text-gray-700 text-lg leading-8">
-          رؤيتنا هي أن نصبح الخيار الأول في خدمات الرعاية الصحية المنزلية
-          في منطقتنا.
-        </p>
+          {/* Mission */}
+          <div>
+            <h2 className="text-2xl font-bold text-blue-700 mb-4">
+              رسالتنا
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              توفير رعاية طبية وتمريضية متخصصة داخل المنزل،
+              بأيدي طاقم طبي محترف، باستخدام أحدث الأساليب الطبية،
+              لضمان أفضل نتائج علاجية وراحة نفسية للمريض وأسرته.
+            </p>
+          </div>
 
-      </div>
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="bg-slate-50 py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-blue-700 mb-12">
+            لماذا Nabd Alhayaat؟
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow">
+              طاقم طبي وتمريضي محترف
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow">
+              التزام كامل بمعايير الجودة
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow">
+              تغطية جغرافية واسعة
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow">
+              باقات رعاية مرنة
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
