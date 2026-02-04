@@ -2,63 +2,13 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import CallButtons from "@/app/components/CallButtons";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
+import { servicesData } from "@/app/data/services";
 
 /**
- * SERVICES DATA
- * أي خدمة جديدة = Object جديد هنا
- */
-const servicesData = {
-  "home-nursing": {
-    title: "تمريض منزلي",
-    tagline: "رعاية تمريضية احترافية داخل منزلك",
-    description:
-      "نقدم خدمات تمريض منزلي متكاملة تشمل متابعة الحالة الصحية، إعطاء الأدوية، والرعاية اليومية داخل المنزل بواسطة طاقم تمريضي مدرب.",
-    image: "/images/photo2.jpg",
-    scopes: [
-      "متابعة العلامات الحيوية",
-      "إعطاء الأدوية في مواعيدها",
-      "العناية بكبار السن",
-      "رعاية مرضى الأمراض المزمنة",
-    ],
-    serviceNameForWhatsApp: "ممرض منزلي",
-  },
-
-  "post-surgery-care": {
-    title: "تمريض بعد العمليات",
-    tagline: "رعاية آمنة بعد العمليات الجراحية",
-    description:
-      "نوفر رعاية تمريضية متخصصة بعد العمليات الجراحية لضمان التعافي السريع ومتابعة الحالة الصحية بدقة داخل المنزل.",
-    image: "/images/photo3.jpg",
-    scopes: [
-      "تغيير الجروح وتعقيمها",
-      "متابعة الحالة بعد الجراحة",
-      "إعطاء الحقن والأدوية",
-      "مراقبة أي مضاعفات محتملة",
-    ],
-    serviceNameForWhatsApp: "تمريض بعد العمليات",
-  },
-
-  "icu-home-care": {
-    title: "رعاية مركزة منزلية",
-    tagline: "مستشفى متكاملة داخل بيتك",
-    description:
-      "تم تصميم خدمة العناية المركزة المنزلية لتقديم رعاية متقدمة للحالات الحرجة مثل أمراض القلب، حالات التنفس، الأمراض العصبية، وما بعد العمليات الكبرى.",
-    image: "/images/photo1.jpg",
-    scopes: [
-      "رعاية مرضى القلب الحرجة",
-      "رعاية مرضى الجهاز التنفسي",
-      "متابعة مرضى الأعصاب",
-      "مراقبة طبية دقيقة 24/7",
-    ],
-    serviceNameForWhatsApp: "العناية المركزة المنزلية",
-  },
-};
-
-/**
- * ✅ لازم async
+ * Service Details Page
  */
 export default async function ServicePage({ params }) {
-  const { slug } = await params; // ✅ فك الـ params صح
+  const { slug } = await params;
   const service = servicesData[slug];
 
   if (!service) {
@@ -70,6 +20,7 @@ export default async function ServicePage({ params }) {
       {/* HERO */}
       <section className="bg-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          
           {/* TEXT */}
           <div>
             <h1 className="text-4xl font-bold text-blue-700 mb-4">
@@ -93,6 +44,7 @@ export default async function ServicePage({ params }) {
             alt={service.title}
             width={600}
             height={450}
+            priority
             className="rounded-2xl shadow-lg w-full h-auto"
           />
         </div>
@@ -130,10 +82,10 @@ export default async function ServicePage({ params }) {
         <p className="text-gray-700 mb-8">
           تواصل معنا الآن وسيقوم فريقنا الطبي بالرد عليك في أسرع وقت
         </p>
-            <div className="flex justify-center ">
 
-        <CallButtons serviceName={service.serviceNameForWhatsApp} />
-            </div>
+        <div className="flex justify-center">
+          <CallButtons serviceName={service.serviceNameForWhatsApp} />
+        </div>
       </section>
     </main>
   );

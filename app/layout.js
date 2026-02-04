@@ -19,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ar">
+    <html lang="ar" dir="rtl">
       <body className={cairo.className}>
         <Navbar />
         {children}
