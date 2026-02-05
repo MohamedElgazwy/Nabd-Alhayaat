@@ -58,14 +58,13 @@ export default function Home() {
             variants={fadeUp}
           >
             <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              رعاية طبية منزلية متخصصة
+           رعاية طبية منزلية متخصصة 
               <br />
-              تصل إليك بسرعة وأمان
+             تصل إليك بسرعة وأمان.
             </h1>
 
             <p className="text-gray-700 text-lg mb-8 leading-relaxed">
-              نوفر خدمات المستشفى داخل منزلك بأعلى معايير الجودة،
-              على يد طاقم طبي وتمريضي محترف.
+              نوفر خدمات المستشفى في المنزل بأعلى معايير الجودة، على يد طاقم طبي وتمريضي محترف. 
             </p>
 
             {/* CTA Buttons (Micro-interaction جوه component) */}
