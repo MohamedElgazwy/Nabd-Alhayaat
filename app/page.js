@@ -1,25 +1,62 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
 import CallButtons from "@/app/components/CallButtons";
 import WhyChooseUs from "@/app/components/WhyChooseUs";
 import { servicesData } from "@/app/data/services";
+import CounterNumbers from "./components/CounterNumbers";
+
+/* ================= Animations ================= */
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 export default function Home() {
-  const services = Object.entries(servicesData).slice(0, 6); // عرض أول 6 خدمات
+  const services = Object.entries(servicesData).slice(0, 6);
+
+  /* ===== Parallax Effect ===== */
+  const { scrollY } = useScroll();
+  const imageY = useTransform(scrollY, [0, 400], [0, -60]);
 
   return (
     <main className="min-h-screen">
-      {/* HERO */}
-      <section className="pb-20 pt-6 bg-blue-50">
-        <div className="text-center mb-10">
+      {/* ================= HERO ================= */}
+      <section className="pb-20 pt-6 bg-blue-50 overflow-hidden">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="text-center mb-10"
+        >
           <span className="inline-block text-blue-700 font-bold text-4xl tracking-wide">
             مستشفى في بيتك
           </span>
-        </div>
+        </motion.div>
 
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           {/* TEXT */}
-          <div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
             <h1 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
               رعاية طبية منزلية متخصصة
               <br />
@@ -31,11 +68,17 @@ export default function Home() {
               على يد طاقم طبي وتمريضي محترف.
             </p>
 
+            {/* CTA Buttons (Micro-interaction جوه component) */}
             <CallButtons serviceName="التمريض المنزلي" />
-          </div>
+          </motion.div>
 
-          {/* IMAGE */}
-          <div>
+          {/* IMAGE – Parallax */}
+          <motion.div
+            style={{ y: imageY }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <Image
               src="/images/photo1.jpg"
               alt="Home Medical Care"
@@ -44,14 +87,20 @@ export default function Home() {
               priority
               className="rounded-2xl shadow-lg w-full h-auto"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* SERVICES PREVIEW */}
+      {/* ================= SERVICES ================= */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-center mb-14"
+          >
             <h2 className="text-3xl font-bold text-blue-700 mb-4">
               خدماتنا الطبية
             </h2>
@@ -59,13 +108,22 @@ export default function Home() {
             <p className="text-gray-600 text-lg">
               باقات رعاية صحية منزلية تناسب جميع الاحتياجات
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8"
+          >
             {services.map(([slug, service]) => (
-              <div
+              <motion.div
                 key={slug}
-                className="bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition overflow-hidden"
+                variants={fadeUp}
+                whileHover={{ y: -10, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 200 }}
+                className="bg-slate-50 rounded-xl shadow-sm hover:shadow-lg overflow-hidden"
               >
                 <Image
                   src={service.image}
@@ -84,31 +142,40 @@ export default function Home() {
                     {service.shortDescription}
                   </p>
 
-                  <Link
-                    href={`/services/${slug}`}
-                    className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg transition"
-                  >
-                    عرض التفاصيل
-                  </Link>
+                  <motion.div whileTap={{ scale: 0.95 }}>
+                    <Link
+                      href={`/services/${slug}`}
+                      className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg transition"
+                    >
+                      عرض التفاصيل
+                    </Link>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* VIEW ALL */}
-          <div className="text-center mt-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-center mt-12"
+          >
             <Link
               href="/services"
               className="inline-block text-blue-700 font-semibold hover:underline"
             >
               عرض جميع الخدمات →
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* WHY CHOOSE US */}
       <WhyChooseUs />
+      <CounterNumbers />
     </main>
   );
 }

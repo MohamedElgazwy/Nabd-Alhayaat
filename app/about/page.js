@@ -1,7 +1,12 @@
+
+
 export const metadata = {
   title: "من نحن | Nabd Alhayaat",
   description: "تعرف على نبض الحياة للرعاية الصحية المنزلية",
 };
+
+import StatsCounters from "@/app/components/StatsCounters";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 export default function AboutPage() {
   return (
@@ -18,6 +23,9 @@ export default function AboutPage() {
           وجودة الخدمة داخل منزله.
         </p>
       </section>
+
+      {/* COUNTERS */}
+      <StatsCounters />
 
       {/* CONTENT */}
       <section className="py-20 bg-white">
@@ -51,28 +59,7 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-slate-50 py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-blue-700 mb-12">
-            لماذا Nabd Alhayaat؟
-          </h2>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow">
-              طاقم طبي وتمريضي محترف
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow">
-              التزام كامل بمعايير الجودة
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow">
-              تغطية جغرافية واسعة
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow">
-              باقات رعاية مرنة
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhyChooseUs />
     </main>
   );
 }

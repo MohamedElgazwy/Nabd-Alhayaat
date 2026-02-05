@@ -2,9 +2,9 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import FloatingContactButtons from "./components/FloatingContactButtons";
 config.autoAddCss = false;
 
 const cairo = Cairo({
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
-        <WhatsAppButton />
+        <FloatingContactButtons />
       </body>
     </html>
   );
