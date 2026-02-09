@@ -1,4 +1,44 @@
 export const servicesData = {
+"icu-home-care": {
+    title: "الرعاية المركزة المنزلية",
+    shortDescription: "وحدة عناية مركزة متكاملة داخل منزلك.",
+    tagline: "وحدة الرعاية المركزة في منزلك",
+    description:
+      "تقوم Nabd Alhayaat بتحويل أي غرفة في منزلك إلى وحدة رعاية مركزة متكاملة، مع توفير رعاية طبية حرجة على مدار الساعة في بيئة آمنة وهادئة بعيداً عن مخاطر العدوى بالمستشفيات.",
+    image:
+      "/images/icu-home-care.jpg",
+    scopes: [
+      "تجهيز وحدة عناية مركزة كاملة خلال أقل من ساعة",
+      "مراقبة لحظية للعلامات الحيوية",
+      "أجهزة تنفس صناعي ومضخات محاليل",
+      "طبيب عناية مركزة مقيم 24/7",
+      "تمريض متخصص في الحالات الحرجة",
+      "أعلى معايير التعقيم ومكافحة العدوى",
+    ],
+    serviceNameForWhatsApp: "الرعاية المركزة المنزلية",
+  },
+
+  /* ================= INTERMEDIATE CARE ================= */
+  "intermediate-care": {
+    title: "الرعاية المتوسطة المنزلية",
+    shortDescription: "رعاية طبية مستمرة بعد تجاوز المرحلة الحرجة.",
+    tagline: "مرحلة التعافي بأمان داخل منزلك",
+    description:
+      "خدمة العناية المتوسطة مخصصة للمرضى الذين تجاوزوا المرحلة الحرجة ولكن ما زالوا بحاجة إلى متابعة طبية وتمريضية دقيقة قبل العودة لحياتهم الطبيعية.",
+    image:
+      "/images/intermediate-care.jpg",
+    scopes: [
+      "متابعة دورية للضغط والسكر ونسبة الأكسجين",
+      "تنظيم البروتوكول العلاجي والأدوية",
+      "تمريض مؤهل للرعاية اليومية",
+      "متابعة مع الاستشاريين",
+      "تقليل مدة الإقامة بالمستشفيات",
+      "إمكانية إجراء تحاليل وأشعة بالمنزل",
+    ],
+    serviceNameForWhatsApp: "الرعاية المتوسطة المنزلية",
+  },
+
+
   "home-nursing": {
     title: "التمريض المنزلي",
     shortDescription: "رعاية تمريضية متكاملة داخل منزلك بأعلى معايير الأمان.",
@@ -25,7 +65,7 @@ export const servicesData = {
     description:
       "توفر Nabd Alhayaat خدمات الأشعة المنزلية باستخدام أجهزة محمولة حديثة مع دقة عالية وسرعة في إصدار التقارير الطبية.",
     image:
-      "https://images.unsplash.com/photo-1580281657527-47cfa1d1c84f?q=80&w=1200&auto=format&fit=crop",
+      "/images/home-radiology.jpg",
     scopes: [
       "الأشعة السينية (X-Ray)",
       "السونار والموجات الصوتية",
@@ -44,7 +84,7 @@ export const servicesData = {
     description:
       "إمكانية حجز نخبة من الأطباء الاستشاريين والأخصائيين للكشف والتشخيص والمتابعة داخل المنزل دون انتظار.",
     image:
-      "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0d61?q=80&w=1200&auto=format&fit=crop",
+      "/images/home-doctors.jpg",
     scopes: [
       "باطنة وقلب",
       "عظام وكسور",
@@ -63,7 +103,7 @@ export const servicesData = {
     description:
       "برنامج علاج طبيعي منزلي متكامل باستخدام أحدث الأساليب العلاجية والمعدات المحمولة لتحقيق أفضل نتائج ممكنة.",
     image:
-      "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=1200&auto=format&fit=crop",
+      "/images/physiotherapy.jpg",
     scopes: [
       "العلاج اليدوي (Manual Therapy)",
       "تمارين علاجية مخصصة",
@@ -133,7 +173,7 @@ export const servicesData = {
     description:
       "خدمة نقل دم منزلي بمعايير طبية صارمة وتحت إشراف متخصص لضمان أعلى درجات الأمان.",
     image:
-      "https://images.unsplash.com/photo-1582719478185-2f3a0b15b0c2?q=80&w=1200&auto=format&fit=crop",
+      "/images/blood-transfusion.jpg",
     scopes: [
       "اختبارات التوافق",
       "مراقبة العلامات الحيوية",
@@ -150,7 +190,7 @@ export const servicesData = {
     description:
       "خدمة إسعاف خاص مجهزة بالكامل للتعامل مع الحالات الحرجة والطوارئ على مدار الساعة.",
     image:
-      "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=1200&auto=format&fit=crop",
+      "/images/private-ambulance.jpg",
     scopes: [
       "جاهزية 24/7",
       "سيارات إسعاف مجهزة بالكامل",
