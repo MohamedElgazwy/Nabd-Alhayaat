@@ -93,7 +93,6 @@ export default function ArticlesPage() {
           ))}
         </div>
 
-        {/* ================= PAGINATION ================= */}
         <div className="flex justify-center items-center gap-6 mt-16">
           <button
             onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
