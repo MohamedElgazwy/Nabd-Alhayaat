@@ -38,15 +38,25 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* ================= HERO ================= */}
-      <section className="pb-20 pt-6 bg-blue-50 overflow-hidden">
+      <section className="pb-20 pt-10 bg-blue-50 overflow-hidden">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="text-center mb-5 mx-2"
+        >
+          <span className="inline-block text-blue-700 font-bold text-3xl tracking-wide">
+           نبض الحياة للرعاية المنزلية _ Nabd Alhayaat For Home Car
+          </span>
+        </motion.div>
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeUp}
           className="text-center mb-10"
         >
-          <span className="inline-block text-blue-700 font-bold text-4xl tracking-wide">
-            مستشفى في بيتك
+          <span className="inline-block text-blue-700 font-semibold text-2xl tracking-wide">
+            “مستشفى فى بيتك”
           </span>
         </motion.div>
 
