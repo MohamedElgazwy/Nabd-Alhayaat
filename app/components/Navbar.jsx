@@ -43,6 +43,7 @@ export default function Navbar() {
             { name: "الخدمات", href: "/services" },
             { name: "من نحن", href: "/about" },
             { name: "تواصل", href: "/contact" },
+            { name: "مقالات", href: "/articles" },
           ].map((item) => (
             <Link
               key={item.name}
@@ -105,6 +106,7 @@ export default function Navbar() {
                 { name: "الخدمات", href: "/services" },
                 { name: "من نحن", href: "/about" },
                 { name: "تواصل", href: "/contact" },
+                { name: "مقالات", href: "/articles" },
               ].map((item) => (
                 <Link
                   key={item.name}
