@@ -13,9 +13,54 @@ const cairo = Cairo({
 });
 
 export const metadata = {
-  title: "Nabd Alhayat",
-  description: "Home Medical Services",
+  title: {
+    default: "نبض الحياة للرعاية المنزلية",
+    template: "%s | نبض الحياة للرعاية المنزلية",
+  },
+  description:
+    "شركة نبض الحياة تقدم خدمات طبية منزلية متكاملة في مصر تشمل التمريض المنزلي، رعاية كبار السن، التحاليل المنزلية، والأشعة المنزلية بأعلى جودة.",
+  
+  keywords: [
+    "رعاية منزلية",
+    "تمريض منزلي",
+    "رعاية كبار السن",
+    "تحاليل منزلية",
+    "أشعة منزلية",
+    "خدمات طبية منزلية في مصر"
+  ],
+
+  metadataBase: new URL("https://nabdalhayaat.com"),
+
+  openGraph: {
+    title: "نبض الحياة للرعاية المنزلية",
+    description:
+      "أفضل خدمات الرعاية الطبية المنزلية في مصر.",
+    url: "https://nabdalhayaat.com",
+    siteName: "نبض الحياة",
+    locale: "ar_EG",
+    type: "website",
+    images: [
+      {
+        url: "/images/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "نبض الحياة للرعاية المنزلية",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "نبض الحياة للرعاية المنزلية",
+    description: "خدمات طبية منزلية متكاملة في مصر.",
+    images: ["/images/logo.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
@@ -26,6 +71,25 @@ export default function RootLayout({ children }) {
         <Footer />
         <FloatingContactButtons />
       </body>
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      name: "نبض الحياة للرعاية المنزلية",
+      url: "https://nabdalhayaat.com",
+      logo: "https://nabdalhayaat.com/images/logo.jpg",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+20XXXXXXXXXX",
+        contactType: "customer service",
+        areaServed: "EG",
+      },
+    }),
+  }}
+/>
+
     </html>
   );
 }

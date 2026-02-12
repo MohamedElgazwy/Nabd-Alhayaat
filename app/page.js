@@ -8,7 +8,6 @@ import WhyChooseUs from "@/app/components/WhyChooseUs";
 import { servicesData } from "@/app/data/services";
 import CounterNumbers from "./components/CounterNumbers";
 
-/* ================= Animations ================= */
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
