@@ -139,7 +139,7 @@ export const servicesData = {
     description:
       "وحدة غسيل كلوي منزلي تحت إشراف طبي كامل وباستخدام أحدث الأجهزة لضمان سلامة المريض.",
     image:
-      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1200&auto=format&fit=crop",
+      "/images/Dialysis.jpg",
     scopes: [
       "إشراف طبي مباشر",
       "طاقم تمريض متخصص",
@@ -173,7 +173,7 @@ export const servicesData = {
     description:
       "خدمة نقل دم منزلي بمعايير طبية صارمة وتحت إشراف متخصص لضمان أعلى درجات الأمان.",
     image:
-      "/images/blood-transfusion.jpg",
+      "/images/blood_transfusions.jpg",
     scopes: [
       "اختبارات التوافق",
       "مراقبة العلامات الحيوية",
