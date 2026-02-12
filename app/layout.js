@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import FloatingContactButtons from "./components/FloatingContactButtons";
+import Script from "next/script";
 config.autoAddCss = false;
 
 const cairo = Cairo({
@@ -57,7 +58,7 @@ export const metadata = {
   },
 
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
 };
 
@@ -65,30 +66,33 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={cairo.className}>
-        <Navbar />
-        {children}
-        <Footer />
-        <FloatingContactButtons />
-      </body>
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      name: "نبض الحياة للرعاية المنزلية",
-      url: "https://nabdalhayaat.com",
-      logo: "https://nabdalhayaat.com/images/logo.jpg",
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+20XXXXXXXXXX",
-        contactType: "customer service",
-        areaServed: "EG",
-      },
-    }),
-  }}
-/>
+<body className={cairo.className}>
+  <Navbar />
+  {children}
+  <Footer />
+  <FloatingContactButtons />
+
+  <Script
+    id="schema-medical"
+    type="application/ld+json"
+    strategy="afterInteractive"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        name: "نبض الحياة للرعاية المنزلية",
+        url: "https://nabdalhayaat.com",
+        logo: "https://nabdalhayaat.com/images/logo.jpg",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+20XXXXXXXXXX",
+          contactType: "customer service",
+          areaServed: "EG",
+        },
+      }),
+    }}
+  />
+</body>
 
     </html>
   );
