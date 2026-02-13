@@ -56,7 +56,7 @@ export const metadata = {
     description: "خدمات طبية منزلية متكاملة في مصر.",
     images: ["/images/logo.jpg"],
   },
-
+// Favicon
   icons: {
     icon: "/favicon.ico",
   },
