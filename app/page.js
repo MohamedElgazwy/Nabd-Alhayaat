@@ -76,6 +76,8 @@ export default function Home() {
               نوفر خدمات المستشفى في المنزل بأعلى معايير الجودة، على يد طاقم طبي وتمريضي محترف. 
             </p>
 
+            
+
             {/* CTA Buttons (Micro-interaction جوه component) */}
             <CallButtons serviceName="التمريض المنزلي" />
           </motion.div>
